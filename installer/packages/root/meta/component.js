@@ -10,16 +10,16 @@ function Component()
     var uninstaller = installer.value("MaintenanceToolName");
 
     if (systemInfo.kernelType === "linux") {
-        installer.setValue("TargetDir", targetDir + "anylink");
+        installer.setValue("TargetDir", targetDir + "jiuxiaoervpn");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller;
 
     } else if (systemInfo.kernelType === "winnt") {
-        installer.setValue("TargetDir", targetDir + "AnyLink");
+        installer.setValue("TargetDir", targetDir + "JiuxiaoerVPN");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller + ".exe";
     } else if (systemInfo.kernelType === "darwin") {
-        installer.setValue("TargetDir", targetDir + "AnyLink");
+        installer.setValue("TargetDir", targetDir + "JiuxiaoerVPN");
 
         uninstaller = installer.value("TargetDir") + "/" + uninstaller + ".app/Contents/MacOS/uninstall";
     }
@@ -36,10 +36,10 @@ function Component()
     }
 
     if (systemInfo.kernelType === "darwin") {
-        component.addStopProcessForUpdateRequest("AnyLink");
+        component.addStopProcessForUpdateRequest("JiuxiaoerVPN");
     } else {
         // kill self when install and uninstall
-        component.addStopProcessForUpdateRequest("anylink");
+        component.addStopProcessForUpdateRequest("jiuxiaoervpn");
     }
 }
 
